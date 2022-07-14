@@ -1,11 +1,11 @@
 # Monty
-`Monty` is an interpreter for Monty Bytecode files, which a scripting language just like Python
+An interpreter for `Monty Bytecode files`, which a scripting language just like Python
 
 ### About The Monty language
 Monty is a scripting language that is first compiled into Monty byte codes, It relies on a unique stack, with specific instructions to manipulate it.
 
 ### Monty byte code files
-Files containing Monty byte codes usually have the .m extension. Example: `file.m`
+Files containing Monty byte codes that usually have the .m extension. Example: `file.m`
 Most of the industry uses this standard but it is not required by the specification of the language. There is not more than one instruction per line. There can be any number of spaces before or after the opcode and its argument:
 ```
 $ cat file.m
