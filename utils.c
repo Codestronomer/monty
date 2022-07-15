@@ -18,3 +18,17 @@ char *parse_line(char *line)
 
 	return (arg);
 }
+
+
+/**
+ * free_data - frees the memory allocated to globals var
+ *
+ * Return: Always nothing
+ */
+
+void free_data(void)
+{
+	free(data.buffer);
+	free_stack(data.head);
+	fclose(data.fd);
+}

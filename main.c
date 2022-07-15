@@ -56,32 +56,25 @@ int main(int argc, char *argv[])
 	data.current_line = 1;
 
 	while ((no_lines = getline(&data.buffer, &length, data.fd)) != -1)
-	{ 
+	{
 		opcode = parse_line(data.buffer);
 		if (opcode == NULL || opcode[0] == '#')
 		{
 			data.current_line++;
 			continue;
 		}
-
 		f = get_opcodes(opcode);
 		if (!f)
 		{
 			fprintf(stderr, "L%u: ", data.current_line);
 			fprintf(stderr, "unknown instruction %s\n", opcode);
-			free(data.buffer);
-			free_stack(data.head);
-			fclose(data.fd);
+			free_data();
 			exit(EXIT_FAILURE);
 		}
-
 		f(&data.head, data.current_line);
 		data.current_line++;
 	}
-
-	free(data.buffer);
-	free_stack(data.head);
-	fclose(fd);
+	free_data();
 
 	return (EXIT_SUCCESS);
 }

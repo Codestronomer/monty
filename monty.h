@@ -40,9 +40,9 @@ typedef struct instruction_s
 
 /**
  * struct globals - global structure to use in functions
- * @line: current line
+ * @buffer: string containing line
+ * @arg: data to be added to be stack
  * @fifo: if stack or queue
- * @args: arguments
  * @fd: file descriptor
  * @head: head of doubly linked list
  * @current_line: current line
@@ -80,5 +80,7 @@ void free_stack(stack_t *stack);
 
 
 /* progam utility functions */
-char *parse_line(char *line); 
+char *parse_line(char *line);
+void free_data(void);
+
 #endif
