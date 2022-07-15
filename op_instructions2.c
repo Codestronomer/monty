@@ -26,3 +26,31 @@ void _pint(stack_t **stack, unsigned int cur_line)
 		printf("%d\n", tmp->n);
 	}	
 }
+
+
+/**
+ * _pop - removes the top element of the stack
+ * @stack: head of stack implemented with a 
+ * doubly linked list
+ * @line_number: current line
+ *
+ * Return: always nothing
+ */
+
+void _pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		fprintf(stderr, "L%u: ", line_number);
+		fprintf(stderr, "can't pop an empty stack\n");
+		free_data();
+		exit(EXIT_FAILURE);
+	}
+
+	tmp = *stack;
+	*stack = (*stack)->next;
+	free(tmp);
+}
+

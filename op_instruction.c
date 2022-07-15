@@ -23,12 +23,11 @@ void _push(stack_t **stack, unsigned int line_number)
 
 	for (i = 0; data.arg[i] != '\0'; i++)
 	{
-		if (!isdigit(data.arg[i]))
+		if (!isdigit(data.arg[i]) && data.arg[i] != '-')
 		{
 			fprintf(stderr, "L%u: ", line_number);
 			fprintf(stderr, "usage: push integer\n");
-			free_stack(data.head);
-			fclose(data.fd);
+			free_data();
 			exit(EXIT_FAILURE);
 		}
 	}

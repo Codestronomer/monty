@@ -63,9 +63,9 @@ typedef struct globals
 
 /* opcode instructions functions */
 void _push(stack_t **stack, unsigned int line_number);
-void _pall(stack_t **stack, unsigned int line_Number);
+void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int cur_line);
-void _pop(stack_t **stack, unsigned int line_nubmeer);
+void _pop(stack_t **stack, unsigned int line_number);
 
 /* get opcodes function */
 void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number);
