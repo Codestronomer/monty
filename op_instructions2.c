@@ -18,9 +18,11 @@ void _pint(stack_t **stack, unsigned int cur_line)
 	{
 		fprintf(stderr, "L%u: ", cur_line);
 		fprintf(stderr, "can't pint, stack empty\n");
+		free_data();
+		exit(EXIT_FAILURE);
 	}
 	else
 	{
 		printf("%d\n", tmp->n);
-	}
+	}	
 }
