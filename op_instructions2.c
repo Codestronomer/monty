@@ -54,3 +54,30 @@ void _pop(stack_t **stack, unsigned int line_number)
 	free(tmp);
 }
 
+
+/**
+ * _swap - swaps the top two elements of the stack
+ * @stack: head of the doubly linked list
+ * @line_number: current line
+ *
+ * Return: Always nothing
+ */
+void _swap(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp;
+
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%u: ", line_number);
+		fprintf(stderr, "can't swap, stack too short\n");
+		free_data();
+		exit(EXIT_FAILURE);
+	}
+
+	tmp = *stack;
+	*stack = (*stack)->next;
+	tmp->next = (*stack)->next;
+	tmp->prev = (*stack);
+	(*stack)->prev = NULL;
+	(*stack)->next = tmp;
+}
