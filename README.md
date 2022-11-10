@@ -49,5 +49,5 @@ $
 ### Return value
 When there is no errors, `monty` returns `0`. Otherwise, returns `1`
 
-## Authors
-
+## Author
+John Rumide <johnrumide6@gmail.com>
